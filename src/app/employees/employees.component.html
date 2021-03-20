@@ -1,0 +1,16 @@
+
+<div >
+    <h2>My Employees</h2>
+    <ul >
+      <li *ngFor="let Employee of Employees" (click)="OnSelect(Employee)">
+        <span >{{Employee.Name}} - </span> {{Employee.Age}}
+      </li>
+    </ul>
+
+<app-employee-details [employee]="SelectedEmployee" > </app-employee-details>
+
+
+        <!-- <h2 *ngIf="SelectedEmployee">Selected Employee:{{SelectedEmployee.Name}}</h2> -->
+
+
+</div>
