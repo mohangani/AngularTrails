@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FirstComponentComponent } from './first-component/first-component.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [ // componants Added here
@@ -13,7 +14,8 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
   ],
   imports: [ // Modules Added Here
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
