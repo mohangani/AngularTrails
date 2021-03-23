@@ -10,15 +10,17 @@ export class EmployeeServiceService {
 
   constructor() { }
 
-
-getEmployees() : Employee[]{
-  return EmployesData;
-}
-
 getEmployeesasync() : Observable<Employee[]>{
   const employess = of(EmployesData);
   return employess;
 }
+
+getEmployee(empId:number) : Observable<Employee>{
+  return of(EmployesData.find((emp)=> emp.Id == empId));
+}
+
+
+
 
 
 }

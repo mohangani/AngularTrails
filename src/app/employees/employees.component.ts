@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Employee } from 'src/MockData/IEmployee';
 import { EmployeeServiceService } from './employee-service.service';
 
@@ -12,29 +11,20 @@ export class EmployeesComponent implements OnInit {
 
 
   Employees : Employee[] = [];
-  //  Employees? : Observable<Employee[]>;
   SelectedEmployee? : Employee;
 
   constructor(private employeeService : EmployeeServiceService) {}
 
 
   ngOnInit(): void {
-    this.GetEmployees();
-  }
-
-  GetEmployees():void{
-    this.Employees = this.employeeService.getEmployees();
-
+    this.GetEmployeesAsync();
   }
 
   GetEmployeesAsync():void{
-     this.employeeService.getEmployeesasync().subscribe(function(employesList){
+     this.employeeService.getEmployeesasync().subscribe((employesList) => {
       this.Employees = employesList;
     });
-
-    //this.Employees = this.employeeService.getEmployeesasync();
-    
-   }
+  }
 
   OnSelect(employee:Employee) :void{
     this.SelectedEmployee = employee;

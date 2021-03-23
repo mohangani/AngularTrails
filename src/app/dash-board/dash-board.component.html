@@ -1,0 +1,6 @@
+<h2>Dashboard Employees</h2>
+    <ul >
+      <li routerLink="/employeedetails/{{Employee.Id}}" *ngFor="let Employee of employees">
+        <span >{{Employee.Name}} - </span> {{Employee.Age}}
+      </li>
+    </ul>

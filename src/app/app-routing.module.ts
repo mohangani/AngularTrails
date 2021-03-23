@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { EmployeesComponent } from './employees/employees.component';
 import { RouterModule } from '@angular/router';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { DashBoardComponent } from './dash-board/dash-board.component';
 
 
 const routes =[
+  {path:'',component:DashBoardComponent},
+  {path:'dashboard',component:DashBoardComponent},
 {path:'employees',component:EmployeesComponent},
-{path:'employeedetails',component:EmployeeDetailsComponent},
-
-
+{path:'employeedetails/:id',component:EmployeeDetailsComponent},
 ];
 
 
