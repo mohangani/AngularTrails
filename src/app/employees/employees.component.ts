@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/MockData/IEmployee';
+import { IEmployee } from '../Iemployee';
 import { EmployeeServiceService } from './employee-service.service';
 
 @Component({
@@ -9,8 +10,8 @@ import { EmployeeServiceService } from './employee-service.service';
 })
 export class EmployeesComponent implements OnInit {
 
-
-  Employees : Employee[] = [];
+  
+  Employees : IEmployee[] = [];
   SelectedEmployee? : Employee;
 
   constructor(private employeeService : EmployeeServiceService) {}
@@ -18,6 +19,7 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit(): void {
     this.GetEmployeesAsync();
+    this.employeeService.getData().subscribe(x=> alert(`${x} from Emp Component.`));
   }
 
   GetEmployeesAsync():void{
@@ -28,8 +30,10 @@ export class EmployeesComponent implements OnInit {
 
   OnSelect(employee:Employee) :void{
     this.SelectedEmployee = employee;
+    var a:string = <string> <any> 1;
+    let b= 1;
   }
-
+  c:number = 1;
   
 
 }

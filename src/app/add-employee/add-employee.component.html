@@ -1,0 +1,22 @@
+<h3 > {{employee.id>0? "Edit" : "Add"}} Employee</h3>
+<div class="container">
+    <div>
+        <label>Name: </label> <input type="text" [(ngModel)]="employee.name">
+        <div class="validation" *ngIf="showValidation && !employee.name">* Enter Name</div>
+    </div>
+
+    <div>
+        <label>Age: </label> <input type="number" [(ngModel)]="employee.age">
+        <div class="validation" *ngIf="showValidation && !employee.age">* Enter Age</div>
+    </div>
+    <div>
+        <label>Gender : </label> <select [(ngModel)]="employee.gender">
+            <option selected value="1">Male</option>
+            <option value="2">Female</option>
+        </select>
+        <div class="validation" *ngIf="showValidation && !employee.gender">* Select Gender</div>
+    </div>
+    <div>
+        <button (click)="saveEmployee()">{{employee.id>0? "Update" : "Save"}}</button>
+    </div>
+</div>

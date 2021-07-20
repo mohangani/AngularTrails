@@ -1,6 +1,47 @@
-<h2>Dashboard Employees</h2>
-    <ul >
-      <li routerLink="/employeedetails/{{Employee.Id}}" *ngFor="let Employee of employees">
-        <span >{{Employee.Name}} - </span> {{Employee.Age}}
-      </li>
-    </ul>
+
+<div class='flex-header'>
+  <div style="flex-grow: 1;">
+    <div style="flex-grow: 1;"></div>
+      <h2 >Dashboard Employees</h2>  
+      
+  </div>
+  <div style="flex-grow: 9;">
+      <!-- <i class="fa fa-plus iconstyle" routerLink="/addemployee"></i> -->
+      <i class="fa fa-plus iconstyle" (click)="windowType = 2; selectedEmployeeId = undefined;"></i>
+
+      <i class="fa fa-edit iconstyle" (click)="editEmployee()"></i>
+      <i class="fa fa-close iconstyle" (click)="deleteEmployee()"></i>
+  </div>
+</div>
+<!-- <div routerLink="/employeedetails/{{Employee.Id}}" *ngFor="let Employee of employees">
+  <span >{{Employee.Name}} - </span> {{Employee.Age}}
+</div> -->
+
+<div class="flex-container fontstyles">
+  <div class ="divscroll flexitem " style="flex-grow: 2; ">
+
+    <!-- <div style="align-items: flex-end;">
+
+    </div> -->
+      <div parentnode id="#{{Employee.id}}" (click)="selectEmployee($event.target,Employee.id)" routerLink="/employeedetails/{{Employee.id}}" *ngFor="let Employee of employees">
+        <span >{{Employee.name}} - </span> {{Employee.age}}
+      </div>
+   
+  </div>
+  
+  <div class = "flexitem" style="flex-grow: 8" [ngSwitch]="windowType">
+    <!-- <router-outlet></router-outlet> -->
+    <app-employee-details *ngSwitchCase="1" [id]="selectedEmployeeId" ></app-employee-details>
+    
+    <app-add-employee *ngSwitchCase="2" [id]="selectedEmployeeId" (needToRefresh)="getEmployees()" ></app-add-employee></div>
+  </div>
+<!-- 
+  <div class="flex-container fontstyles">
+    <div class ="divscroll flexitem " style="flex-grow: 2; ">
+        <app-dash-board></app-dash-board>
+    </div>
+    <div class = "flexitem" style="flex-grow: 8">
+      <router-outlet></router-outlet>
+    </div> -->
+    
+

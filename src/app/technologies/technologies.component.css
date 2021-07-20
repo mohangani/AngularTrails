@@ -1,0 +1,35 @@
+
+    .flex-container {
+      display: flex;
+      align-items: stretch;
+      background-color: #f1f1f1;
+      flex-wrap: wrap;
+      /* height: calc(100vh - 100px); */
+      border: 0ch;
+      text-align: center;
+    
+    }
+    
+    .fontstyles {
+        /* background-color: black; */
+        color: red;
+        margin: 3px;
+        line-height: 25px;
+        font-size: 20px;
+        
+    }
+
+    .nav{
+        display: flex;
+flex-direction: row;
+order: 5;
+flex-grow: 4;
+
+    }
+      
+    
+    .divscroll{
+        height: calc(100vh - 100px);
+      overflow-y: auto;
+    }
+    

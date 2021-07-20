@@ -1,10 +1,19 @@
-<div *ngIf="employee">
+<div  *ngIf="employee">
 
-    <h2>{{employee.Name | uppercase}} Details</h2>
-    <div><span>id: </span>{{employee.Age}}</div>
+    <h2>{{employee.name}} Details</h2>
+    <div><span>id: </span>{{employee.id}}</div>
+    <div><span>age: </span>{{employee.age}}</div>
+    <div><span>Gender: </span>{{employee.gender==1? "Male" : "Female"}}</div>
+
+<!-- 
+    <div><span>id: </span>{{employee.age}}</div>
     <div>
       <label for="Employee-name">employee name: </label>
-      <input id="Employee-name" [(ngModel)]="employee.Name" placeholder="name">
-    </div>
+      <label for="Employee-name">employee name: </label>
+      <label for="Employee-name">employee name: </label>
+
+
+     <input id="Employee-name" [(ngModel)]="employee.name" placeholder="name">
+    </div> -->
   
   </div>
